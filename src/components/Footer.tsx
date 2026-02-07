@@ -1,12 +1,25 @@
-import { Library } from 'lucide-react';
+import Image from 'next/image';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function Footer() {
+  const logo = PlaceHolderImages.find(img => img.id === 'app-logo');
+
   return (
     <footer className="border-t border-primary/10 bg-background py-12">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
-          <div className="flex items-center gap-2 font-headline text-xl font-bold tracking-tight text-primary">
-            <Library className="h-6 w-6" />
+          <div className="flex items-center gap-3 font-headline text-xl font-bold tracking-tight text-primary">
+            <div className="relative h-8 w-8 overflow-hidden rounded-lg">
+              {logo && (
+                <Image 
+                  src={logo.imageUrl}
+                  alt="Letryx Boreal Logo"
+                  fill
+                  className="object-contain"
+                  data-ai-hint="app logo"
+                />
+              )}
+            </div>
             <span>Letryx Boreal</span>
           </div>
           <div className="flex flex-wrap justify-center gap-8 text-sm text-muted-foreground">

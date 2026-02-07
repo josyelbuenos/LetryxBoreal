@@ -2,12 +2,15 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { Download, Library } from 'lucide-react';
+import { Download } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const logo = PlaceHolderImages.find(img => img.id === 'app-logo');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,9 +28,17 @@ export function Navbar() {
         : "bg-transparent py-5"
     )}>
       <div className="container mx-auto flex items-center justify-between px-4">
-        <Link href="/" className="flex items-center gap-2 font-headline text-xl font-bold tracking-tight text-primary transition-all hover:scale-105 active:scale-95 group">
-          <div className="p-2 rounded-xl bg-primary/10 transition-colors group-hover:bg-primary/20">
-            <Library className="h-6 w-6" />
+        <Link href="/" className="flex items-center gap-3 font-headline text-xl font-bold tracking-tight text-primary transition-all hover:scale-105 active:scale-95 group">
+          <div className="relative h-10 w-10 overflow-hidden rounded-xl bg-primary/5 transition-colors group-hover:bg-primary/10">
+            {logo && (
+              <Image 
+                src={logo.imageUrl}
+                alt="Letryx Boreal Logo"
+                fill
+                className="object-contain p-1"
+                data-ai-hint="app logo"
+              />
+            )}
           </div>
           <span className="hidden sm:inline">Letryx Boreal</span>
         </Link>
