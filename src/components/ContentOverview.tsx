@@ -1,13 +1,13 @@
 import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { Library, Check } from 'lucide-react';
 
-const categories = [
-  { name: 'UI Components', count: '1,200+' },
-  { name: 'Design Patterns', count: '450+' },
-  { name: 'Iconography', count: '5,000+' },
-  { name: 'Illustration Kits', count: '85+' },
-  { name: 'Documentation', count: 'Full' },
+const shelfDimensions = [
+  { name: 'Lendo Atualmente', color: 'bg-primary' },
+  { name: 'Favoritos', color: 'bg-primary/80' },
+  { name: 'Lidos', color: 'bg-primary/60' },
+  { name: 'Lista de Desejos', color: 'bg-primary/40' },
 ];
 
 export function ContentOverview() {
@@ -21,17 +21,21 @@ export function ContentOverview() {
             {contentImage && (
               <Image
                 src={contentImage.imageUrl}
-                alt={contentImage.description}
+                alt="Visualização da Estante Inteligente"
                 fill
-                className="object-cover transition-transform duration-700 hover:scale-110"
-                data-ai-hint={contentImage.imageHint}
+                className="object-cover transition-transform duration-700 hover:scale-105"
+                data-ai-hint="bookshelf minimal"
               />
             )}
-            <div className="absolute bottom-8 left-8 right-8 rounded-2xl bg-background/90 p-6 shadow-xl backdrop-blur-sm">
+            <div className="absolute bottom-8 left-8 right-8 rounded-2xl bg-background/95 p-6 shadow-xl backdrop-blur-md border border-white/20">
+              <h4 className="font-bold text-sm mb-4 flex items-center gap-2">
+                <Library className="h-4 w-4 text-primary" /> Estante Inteligente
+              </h4>
               <div className="flex flex-wrap gap-2">
-                {categories.map((cat, i) => (
-                  <Badge key={i} variant="secondary" className="px-3 py-1 text-xs">
-                    {cat.name}: {cat.count}
+                {shelfDimensions.map((dim, i) => (
+                  <Badge key={i} variant="outline" className="px-3 py-1 text-xs border-primary/20">
+                    <span className={`mr-2 h-2 w-2 rounded-full ${dim.color}`} />
+                    {dim.name}
                   </Badge>
                 ))}
               </div>
@@ -39,22 +43,20 @@ export function ContentOverview() {
           </div>
           <div>
             <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-              A Treasure Trove of <br /> Digital Assets
+              A Vastidão Literária <br /> na sua Palma
             </h2>
             <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-              Letryx Boreal provides an expansive library of meticulously crafted components and assets. 
-              Whether you are building a complex web application or a minimalist mobile interface, 
-              our content overview gives you the clarity to find exactly what you need.
+              Integramos os metadados da <strong>Z-Library</strong>, garantindo acesso a informações de mais de 14 milhões de livros. Organize sua vida literária em quatro dimensões e filtre por ano, idioma, formato e editora em segundos.
             </p>
             <div className="mt-10 space-y-6">
               {[
-                { label: 'Precision Crafted', desc: 'Every pixel and line of code is optimized for quality.' },
-                { label: 'Cloud Synchronized', desc: 'Access your favorite assets from any device, anywhere.' },
-                { label: 'Community Driven', desc: 'Regularly updated with new content based on user feedback.' },
+                { label: 'Privacidade Granular', desc: 'Você decide exatamente o que mostrar ou esconder no seu perfil.' },
+                { label: 'Comunidade Verificada', desc: 'Identifique perfis influentes e criadores com nosso sistema de selos.' },
+                { label: 'Acessibilidade Nativa', desc: 'Suporte a múltiplos idiomas e modos claro/escuro para qualquer leitor.' },
               ].map((item, i) => (
                 <div key={i} className="flex gap-4">
-                  <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-white text-[10px] font-bold">
-                    {i + 1}
+                  <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/20 text-primary">
+                    <Check className="h-4 w-4" />
                   </div>
                   <div>
                     <h4 className="font-headline font-semibold text-foreground">{item.label}</h4>

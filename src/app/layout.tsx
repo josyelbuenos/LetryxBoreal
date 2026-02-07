@@ -2,8 +2,8 @@ import type {Metadata} from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Boreal Library | Knowledge and Elegance Combined',
-  description: 'Letryx Boreal is a next-generation library ecosystem designed for modern creators. Discover, organize, and integrate world-class design assets seamlessly.',
+  title: 'Letryx Boreal | Ecossistema de Descoberta Literária',
+  description: 'Onde a inteligência da IA encontra o dinamismo das conexões humanas. Descubra seu próximo mundo favorito através da luz Boreal.',
 };
 
 export default function RootLayout({
@@ -12,7 +12,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="pt-BR" className="scroll-smooth">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
