@@ -1,32 +1,33 @@
+
 "use client";
 
 import { useEffect, useRef } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { BrainCircuit, Zap, Smartphone, MessageSquareQuote } from 'lucide-react';
+import { BrainCircuit, ShieldAlert, Smartphone, Fingerprint } from 'lucide-react';
 
 const technologies = [
   {
-    title: 'Inteligência Artificial Real',
-    description: 'Com Google Genkit + Gemini, analisamos seus insights para recomendações profundas, não apenas algoritmos básicos.',
+    title: 'IA de Redes Neurais',
+    description: 'Recomendações via Gemini & Genkit que analisam contexto, sentimento e semântica real, não apenas dados frios.',
     icon: <BrainCircuit className="h-8 w-8" />,
     delay: 'animate-delay-100'
   },
   {
-    title: 'Infraestrutura Realtime',
-    description: 'Powered by Firebase. Interações instantâneas e acesso seguro via Magic Link, sem senhas complicadas.',
-    icon: <Zap className="h-8 w-8" />,
+    title: 'Segurança Nível Pentesting',
+    description: 'Arquitetura projetada sob ótica de segurança ofensiva. Autenticação via Magic Link blindada contra ataques comuns.',
+    icon: <ShieldAlert className="h-8 w-8" />,
     delay: 'animate-delay-200'
   },
   {
-    title: 'Experiência PWA',
-    description: 'Instale como um app nativo. Ocupa pouco espaço e oferece uma StatusBar dinâmica que monitora sua rede e bateria.',
-    icon: <Smartphone className="h-8 w-8" />,
+    title: 'Privacidade Granular',
+    description: 'Você decide o que o sistema vê. Controle total sobre metadados e logs de leitura, garantindo anonimato real.',
+    icon: <Fingerprint className="h-8 w-8" />,
     delay: 'animate-delay-300'
   },
   {
-    title: 'Talks: Notas Temporárias',
-    description: 'Compartilhe insights rápidos em micro-textos de 24 horas. O dinamismo das redes sociais focado puramente em leitura.',
-    icon: <MessageSquareQuote className="h-8 w-8" />,
+    title: 'StatusBar Dinâmica',
+    description: 'Hardware e software em simbiose. Monitoramento em tempo real de bateria e latência de rede (ping) integrada.',
+    icon: <Smartphone className="h-8 w-8" />,
     delay: 'animate-delay-400'
   },
 ];
@@ -56,10 +57,10 @@ export function Benefits() {
       <div className="container mx-auto px-4">
         <div className="mb-20 text-center reveal-item opacity-0">
           <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl md:text-6xl text-foreground">
-            Tecnologia de Elite para Leitores
+            Tecnologia com Visão Crítica
           </h2>
           <p className="mt-6 text-lg text-muted-foreground max-w-3xl mx-auto">
-            Combinamos Next.js 15, React 19 e as ferramentas mais avançadas da Google para criar um ambiente fluido e inteligente.
+            Integramos a inteligência do Google Cloud com a segurança do Firebase, sob uma arquitetura rigorosamente testada.
           </p>
         </div>
         
