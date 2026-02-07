@@ -61,7 +61,6 @@ O Letryx Boreal é a materialização da união entre a inteligência das máqui
 
 ---
 
-
 ## 📜 Licença & Beta
 Este projeto está atualmente em versão **Beta (1.0.0)**. O uso dos metadados integrados via Z-Library é de responsabilidade do usuário final, conforme as leis de sua jurisdição.
 
