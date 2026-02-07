@@ -5,7 +5,7 @@
 @layer base {
   :root {
     --background: 40 30% 96%; /* Papel Antigo */
-    --foreground: 120 10% 15%; /* Verde Sálvia Escuro / Carvão */
+    --foreground: 120 10% 15%; /* Verde Sálvia Escuro */
     --card: 40 30% 98%;
     --card-foreground: 120 10% 15%;
     --popover: 40 30% 98%;
@@ -23,12 +23,7 @@
     --border: 120 5% 85%;
     --input: 120 5% 85%;
     --ring: 120 20% 40%;
-    --radius: 0.75rem;
-    --chart-1: 120 20% 40%;
-    --chart-2: 40 20% 60%;
-    --chart-3: 120 10% 20%;
-    --chart-4: 40 50% 70%;
-    --chart-5: 120 30% 60%;
+    --radius: 1rem;
   }
   .dark {
     --background: 120 10% 10%;
@@ -45,8 +40,6 @@
     --muted-foreground: 120 5% 70%;
     --accent: 120 20% 30%;
     --accent-foreground: 40 20% 90%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
     --border: 120 10% 20%;
     --input: 120 10% 20%;
     --ring: 120 20% 50%;
@@ -58,6 +51,38 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground scroll-smooth transition-colors duration-500;
+  }
+}
+
+@layer utilities {
+  .animate-delay-100 { animation-delay: 100ms; }
+  .animate-delay-200 { animation-delay: 200ms; }
+  .animate-delay-300 { animation-delay: 300ms; }
+  .animate-delay-400 { animation-delay: 400ms; }
+  .animate-delay-500 { animation-delay: 500ms; }
+
+  .glass-effect {
+    @apply backdrop-blur-md bg-white/70 border-white/20 shadow-lg;
+  }
+
+  .mesh-gradient {
+    background-color: hsl(var(--background));
+    background-image: 
+      radial-gradient(at 0% 0%, hsla(120, 20%, 40%, 0.05) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, hsla(40, 20%, 60%, 0.05) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, hsla(120, 20%, 40%, 0.05) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, hsla(40, 20%, 60%, 0.05) 0px, transparent 50%);
+  }
+
+  .reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal-on-scroll.active {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
