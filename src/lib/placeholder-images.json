@@ -15,20 +15,14 @@
     {
       "id": "content-assets",
       "description": "Abstract 3D shapes representing design assets",
-      "imageUrl": "https://images.unsplash.com/photo-1684139517679-032b7213ad2e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMHNoYXBlc3xlbnwwfHx8fDE3NzA0MDIzMjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1684139517679-032b7213ad2e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHxfHxhYnN0cmFjdCUyMHNoYXBlc3xlbnwwfHx8fDE3NzA0MDIzMjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "abstract shapes"
     },
     {
-      "id": "dev-1",
-      "description": "Portrait of a modern software developer",
-      "imageUrl": "https://images.unsplash.com/photo-1737575655055-e3967cbefd03?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZGV2ZWxvcGVyJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzcwNDIzNDAzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "id": "josyel-avatar",
+      "description": "Avatar de Josyel Buenos",
+      "imageUrl": "https://avatars.githubusercontent.com/u/153454168?v=4",
       "imageHint": "developer portrait"
-    },
-    {
-      "id": "dev-2",
-      "description": "Portrait of a creative designer",
-      "imageUrl": "https://images.unsplash.com/photo-1638338276001-cfc1f7fb21cc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZGVzaWduZXIlMjBwb3J0cmFpdHxlbnwwfHx8fDE3NzAzODcyNzV8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "designer portrait"
     },
     {
       "id": "feature-1",
