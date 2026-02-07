@@ -1,3 +1,34 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-bg",
+      "description": "A clean, modern library interior with blue accents",
+      "imageUrl": "https://images.unsplash.com/photo-1674653760708-f521366e5cde?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxtb2Rlcm4lMjBsaWJyYXJ5fGVufDB8fHx8MTc3MDMwODY1NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "modern library"
+    },
+    {
+      "id": "content-assets",
+      "description": "Abstract 3D shapes representing design assets",
+      "imageUrl": "https://images.unsplash.com/photo-1684139517679-032b7213ad2e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMHNoYXBlc3xlbnwwfHx8fDE3NzA0MDIzMjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "abstract shapes"
+    },
+    {
+      "id": "dev-1",
+      "description": "Portrait of a modern software developer",
+      "imageUrl": "https://images.unsplash.com/photo-1737575655055-e3967cbefd03?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZGV2ZWxvcGVyJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzcwNDIzNDAzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "developer portrait"
+    },
+    {
+      "id": "dev-2",
+      "description": "Portrait of a creative designer",
+      "imageUrl": "https://images.unsplash.com/photo-1638338276001-cfc1f7fb21cc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZGVzaWduZXIlMjBwb3J0cmFpdHxlbnwwfHx8fDE3NzAzODcyNzV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "designer portrait"
+    },
+    {
+      "id": "feature-1",
+      "description": "Clean user interface mockup",
+      "imageUrl": "https://images.unsplash.com/photo-1706894329287-73d96ffc1b9f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx1aSUyMG1vY2t1cHxlbnwwfHx8fDE3NzA0MjM0MDN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "ui mockup"
+    }
+  ]
 }
