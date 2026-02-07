@@ -4,6 +4,11 @@ import './globals.css';
 export const metadata: Metadata = {
   title: 'Letryx Boreal | Ecossistema de Descoberta Literária',
   description: 'Onde a inteligência da IA encontra o dinamismo das conexões humanas. Descubra seu próximo mundo favorito através da luz Boreal.',
+  icons: {
+    icon: 'https://i.ibb.co/YBdyV04f/Design-sem-nome-20260203-232552-0000.png',
+    shortcut: 'https://i.ibb.co/YBdyV04f/Design-sem-nome-20260203-232552-0000.png',
+    apple: 'https://i.ibb.co/YBdyV04f/Design-sem-nome-20260203-232552-0000.png',
+  },
 };
 
 export default function RootLayout({
