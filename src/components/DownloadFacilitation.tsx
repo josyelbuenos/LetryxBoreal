@@ -3,8 +3,16 @@
 import { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
-import { Download, CheckCircle, Smartphone, Monitor, Globe, ShieldCheck, Sparkles } from 'lucide-react';
+import { Download, CheckCircle, Smartphone, Monitor, Globe, ShieldCheck, Sparkles, ExternalLink, Info } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 export function DownloadFacilitation() {
   const [downloading, setDownloading] = useState(false);
@@ -39,11 +47,13 @@ export function DownloadFacilitation() {
           clearInterval(interval);
           setDownloading(false);
           setCompleted(true);
+          // Trigger actual download
+          window.location.href = "https://github.com/josyelbuenos/LetryxBoreal/releases/download/Android/Letryx.Boreal.apk";
           return 100;
         }
-        return prev + 4;
+        return prev + 5;
       });
-    }, 80);
+    }, 50);
   };
 
   return (
@@ -57,20 +67,20 @@ export function DownloadFacilitation() {
               </div>
               
               <div className="relative z-10">
-                <h2 className="font-headline text-5xl font-extrabold sm:text-6xl leading-[1.1] mb-8">Fim da busca <br /> infinita.</h2>
+                <h2 className="font-headline text-5xl font-extrabold sm:text-6xl leading-[1.1] mb-8 text-white">Pronto para a <br /> descoberta.</h2>
                 <p className="text-primary-foreground/90 text-xl leading-relaxed mb-12">
-                  O Letryx é um <strong>PWA de próxima geração</strong>. Instale no celular em segundos, integre-se nativamente e aproveite a <strong>StatusBar Dinâmica</strong>.
+                  O Letryx é um <strong>PWA de elite</strong>. Instale no celular via APK, use a versão Web ou instale nativamente no seu computador.
                 </p>
                 
                 <div className="space-y-6">
                   {downloading ? (
                     <div className="space-y-5 rounded-3xl bg-white/10 p-8 backdrop-blur-2xl border border-white/20 animate-in zoom-in-95 duration-500">
-                      <div className="flex items-center justify-between text-sm font-bold tracking-widest uppercase">
-                        <span>Letryx_Boreal_v1.0.pkg</span>
+                      <div className="flex items-center justify-between text-sm font-bold tracking-widest uppercase text-white">
+                        <span>Baixando Letryx_Boreal.apk</span>
                         <span className="font-mono">{progress}%</span>
                       </div>
                       <Progress value={progress} className="h-4 bg-white/10" />
-                      <p className="text-xs text-primary-foreground/60 italic text-center animate-pulse">Sincronizando metadados da Z-Library...</p>
+                      <p className="text-xs text-primary-foreground/60 italic text-center animate-pulse">Iniciando download seguro via GitHub...</p>
                     </div>
                   ) : completed ? (
                     <div className="flex items-center gap-6 rounded-3xl bg-white/20 p-10 backdrop-blur-2xl border border-white/30 animate-in slide-in-from-bottom-8 duration-700">
@@ -78,34 +88,69 @@ export function DownloadFacilitation() {
                         <CheckCircle className="h-10 w-10 text-primary" />
                       </div>
                       <div>
-                        <p className="font-extrabold text-2xl">Pronto para Instalar!</p>
-                        <p className="text-primary-foreground/80">Clique em "Adicionar à Tela de Início" no seu navegador.</p>
+                        <p className="font-extrabold text-2xl text-white">Download Iniciado!</p>
+                        <p className="text-primary-foreground/80">O APK está sendo baixado. Abra o arquivo para instalar.</p>
                       </div>
                     </div>
                   ) : (
-                    <div className="space-y-10">
+                    <div className="flex flex-col gap-4">
                       <Button 
                         size="lg" 
                         variant="secondary" 
-                        className="h-20 gap-4 text-xl font-extrabold w-full rounded-2xl shadow-2xl transition-all duration-500 hover:scale-[1.02] hover:bg-white active:scale-95 group"
+                        className="h-20 gap-4 text-xl font-extrabold w-full rounded-2xl shadow-2xl transition-all duration-500 hover:scale-[1.02] hover:bg-white active:scale-95 group text-primary"
                         onClick={startDownload}
                       >
                         <Download className="h-7 w-7 transition-transform group-hover:-translate-y-1" />
-                        Instalar Letryx Boreal
+                        Download Android (APK)
                       </Button>
-                      <div className="flex justify-between gap-4 px-4 opacity-70">
-                        {[
-                          { icon: <Smartphone />, label: 'Mobile' },
-                          { icon: <Monitor />, label: 'Desktop' },
-                          { icon: <Globe />, label: 'Global' }
-                        ].map((item, i) => (
-                          <div key={i} className="flex flex-col items-center gap-3 group transition-all hover:opacity-100 hover:-translate-y-1">
-                            <div className="p-4 rounded-2xl bg-white/10 transition-colors group-hover:bg-white/20">
-                              {item.icon}
+                      
+                      <div className="grid grid-cols-2 gap-4">
+                        <Button 
+                          variant="outline"
+                          className="h-16 rounded-2xl bg-white/10 border-white/20 hover:bg-white/20 text-white font-bold gap-2"
+                          asChild
+                        >
+                          <a href="https://letryxboreal.vercel.app" target="_blank" rel="noopener noreferrer">
+                            <Globe className="h-5 w-5" />
+                            Acessar Web
+                          </a>
+                        </Button>
+
+                        <Dialog>
+                          <DialogTrigger asChild>
+                            <Button 
+                              variant="outline"
+                              className="h-16 rounded-2xl bg-white/10 border-white/20 hover:bg-white/20 text-white font-bold gap-2"
+                            >
+                              <Monitor className="h-5 w-5" />
+                              Instalar PC
+                            </Button>
+                          </DialogTrigger>
+                          <DialogContent className="bg-white rounded-[2rem] border-none shadow-2xl max-w-md">
+                            <DialogHeader>
+                              <DialogTitle className="text-2xl font-black text-primary flex items-center gap-2">
+                                <Monitor className="h-6 w-6" /> Instalação PWA (PC)
+                              </DialogTitle>
+                              <DialogDescription className="text-muted-foreground text-lg py-4">
+                                Para instalar o Letryx Boreal no seu computador:
+                              </DialogDescription>
+                            </DialogHeader>
+                            <div className="space-y-4 text-sm">
+                              <div className="flex gap-4 items-start p-4 rounded-2xl bg-primary/5">
+                                <div className="h-6 w-6 rounded-full bg-primary text-white flex items-center justify-center shrink-0 font-bold">1</div>
+                                <p>Acesse o site pelo <strong>Google Chrome</strong> ou <strong>Microsoft Edge</strong>.</p>
+                              </div>
+                              <div className="flex gap-4 items-start p-4 rounded-2xl bg-primary/5">
+                                <div className="h-6 w-6 rounded-full bg-primary text-white flex items-center justify-center shrink-0 font-bold">2</div>
+                                <p>Clique no ícone de <strong>instalação</strong> (computador com uma seta) na barra de endereços.</p>
+                              </div>
+                              <div className="flex gap-4 items-start p-4 rounded-2xl bg-primary/5">
+                                <div className="h-6 w-6 rounded-full bg-primary text-white flex items-center justify-center shrink-0 font-bold">3</div>
+                                <p>Clique em <strong>"Instalar"</strong> para ter o Letryx como um aplicativo nativo.</p>
+                              </div>
                             </div>
-                            <span className="text-[10px] uppercase font-black tracking-[0.2em]">{item.label}</span>
-                          </div>
-                        ))}
+                          </DialogContent>
+                        </Dialog>
                       </div>
                     </div>
                   )}
@@ -114,21 +159,21 @@ export function DownloadFacilitation() {
             </div>
             
             <div className="bg-white/5 p-10 lg:p-16 lg:border-l lg:border-white/10 flex flex-col justify-center">
-              <h3 className="font-headline text-3xl font-extrabold mb-12 flex items-center gap-4">
-                <ShieldCheck className="h-9 w-9 text-white/80" /> Acesso de Elite
+              <h3 className="font-headline text-3xl font-extrabold mb-12 flex items-center gap-4 text-white">
+                <ShieldCheck className="h-9 w-9 text-white/80" /> Ecossistema Blindado
               </h3>
               <div className="space-y-12">
                 {[
-                  { icon: <Sparkles />, title: 'Magic Link Seguro', desc: 'Acesso instantâneo via e-mail. Sem senhas, apenas segurança máxima e rapidez.' },
-                  { icon: <Globe />, title: 'Sincronização Realtime', desc: 'Firebase Firestore garante que sua estante esteja sempre atualizada em todos os dispositivos.' },
-                  { icon: <Smartphone />, title: 'StatusBar Dinâmica', desc: 'Hardware integrado: acompanhe rede e bateria diretamente na interface do Letryx.' },
+                  { icon: <Sparkles />, title: 'Inteligência Boreal', desc: 'Metadados da Z-Library processados por IA para recomendações precisas.' },
+                  { icon: <Globe />, title: 'Multiplataforma', desc: 'Acesse de qualquer lugar: Android nativo, Navegador ou Desktop via PWA.' },
+                  { icon: <ShieldCheck />, title: 'Segurança Pentesting', desc: 'Protocolos de segurança ofensiva garantindo que seus dados sejam privados.' },
                 ].map((item, i) => (
                   <div key={i} className="flex gap-6 group">
                     <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white/10 transition-all duration-500 group-hover:bg-white group-hover:text-primary group-hover:scale-110">
                       {item.icon}
                     </div>
                     <div>
-                      <h4 className="font-extrabold text-2xl mb-2 group-hover:translate-x-1 transition-transform duration-500">{item.title}</h4>
+                      <h4 className="font-extrabold text-2xl mb-2 text-white group-hover:translate-x-1 transition-transform duration-500">{item.title}</h4>
                       <p className="text-primary-foreground/70 leading-relaxed text-lg">{item.desc}</p>
                     </div>
                   </div>
