@@ -24,6 +24,7 @@ O projeto utiliza o que há de mais avançado no desenvolvimento web moderno:
 
 ## ✨ Funcionalidades Principais
 
+
 ### 🧠 Inteligência que Guia
 Diferente de algoritmos tradicionais, o Letryx usa o Genkit para analisar o contexto real do usuário — seus comentários, posts efêmeros e histórico — para sugerir livros que realmente ressoam com seu momento atual, resolvendo a "paralisia de escolha".
 
