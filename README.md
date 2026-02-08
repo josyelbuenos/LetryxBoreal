@@ -29,7 +29,7 @@ Diferente de algoritmos tradicionais, o Letryx usa o Genkit para analisar o cont
 
 ### 🛡️ Privacidade Granular & Segurança
 Desenvolvido por um especialista em **Pentesting**, a segurança é o alicerce:
-- **Zero Passwords:** Acesso via Magic Link elimina riscos de credenciais e ataques de força bruta.
+- **Acesso rapido:** Acesso via Magic Link elimina riscos de credenciais e ataques de força bruta.
 - **Privacidade Total:** O usuário decide exatamente quais metadados da sua estante são públicos ou privados.
 - **Arquitetura Blindada:** Protocolos de segurança integrados desde o primeiro dia (Security by Design).
 
